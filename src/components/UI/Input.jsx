@@ -1,3 +1,9 @@
+/**
+ * @param {string} label - The input label
+ * @param {string} id - The input id
+ * @param {Object} props - The input props
+ * @returns {JSX.Element} The input element
+ */
 const Input = ({ label, id, ...props }) => {
   return (
     <p className="control">

@@ -12,16 +12,29 @@ const Cart = () => {
   const cartCtx = useContext(CartContext);
   const userProgressCtx = useContext(UserProgressContext);
 
-  // Total $
+  /**
+   * Calculates the total price of the cart
+   * @function
+   * @param {object} cart - cart object
+   * @returns {number} total price of the cart
+   */
   const cartTotal = cartCtx.items.reduce(
     (totalPrice, item) => totalPrice + item.quantity * item.price,
     0
   );
 
+  /**
+   * Closes the cart modal
+   * @function
+   */
   function handleCloseCart() {
     userProgressCtx.hideCart();
   }
 
+  /**
+   * Navigates to the checkout page
+   * @function
+   */
   function handleGoToCheckout() {
     userProgressCtx.showCheckout();
   }

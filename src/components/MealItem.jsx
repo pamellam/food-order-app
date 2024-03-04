@@ -4,9 +4,20 @@ import Button from './UI/Button';
 import { currencyFormatter } from '../util/formattting';
 import CartContext from '../store/CartContext';
 
+/**
+ * @param {object} meal - The meal object to be rendered
+ * @param {string} meal.name - The name of the meal
+ * @param {string} meal.image - The image of the meal
+ * @param {number} meal.price - The price of the meal
+ * @param {string} meal.description - The description of the meal
+ * @returns {JSX.Element} - The meal item component
+ */
 const MealItem = ({ meal }) => {
   const cartCtx = useContext(CartContext);
 
+  /**
+   * Adds the meal to the cart
+   */
   function handleAddMealToCart() {
     cartCtx.addItem(meal);
   }
